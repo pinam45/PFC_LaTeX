@@ -1,0 +1,93 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{StandardLibraryCDefinition}
+  [26/12/2016 V1.0, listings language file for Standard Library C]
+
+\RequirePackage{listings}
+
+\lstalias[stdlib]{C}[StandardLibrary]{C}
+\lstalias[std]{C}[StandardLibrary]{C}
+\lstalias[SL]{C}[StandardLibrary]{C}
+\lstdefinelanguage[StandardLibrary]{C}{
+  language=C,
+  %=======================================================================================================
+  %=================================================== Types =============================================
+  %=======================================================================================================
+  % C Library - <complex.h>
+  morekeywords=[2]{imaginary,complex},
+  % C Library - <fenv.h>
+  morekeywords=[2]{fenv_t,fexcept_t},
+  % C Library - <setjmp.h>
+  morekeywords=[2]{jmp_buf},
+  % C Library - <signal.h>
+  morekeywords=[2]{sig_atomic_t},
+  % C Library - <stdalign.h>
+  morekeywords=[2]{alignas,alignof},
+  % C Library - <stdarg.h>
+  morekeywords=[2]{va_list},
+  % C Library - <stdatomic.h>
+  morekeywords=[2]{memory_order,atomic_flag,atomic_bool,atomic_char,atomic_schar,atomic_uchar,atomic_short,atomic_ushort,atomic_int,atomic_uint,atomic_long,atomic_ulong,atomic_llong,atomic_ullong,atomic_char16_t,atomic_char32_t,atomic_wchar_t,atomic_int_least8_t,atomic_uint_least8_t,atomic_int_least16_t,atomic_uint_least16_t,atomic_int_least32_t,atomic_uint_least32_t,atomic_int_least64_t,atomic_uint_least64_t,atomic_int_fast8_t,atomic_uint_fast8_t,atomic_int_fast16_t,atomic_uint_fast16_t,atomic_int_fast32_t,atomic_uint_fast32_t,atomic_int_fast64_t,atomic_uint_fast64_t,atomic_intptr_t,atomic_uintptr_t,atomic_size_t,atomic_ptrdiff_t,atomic_intmax_t,atomic_uintmax_t},
+  % C Library - <stdbool.h>
+  morekeywords=[2]{bool},
+  % C Library - <stddef.h>
+  morekeywords=[2]{ptrdiff_t,size_t,wchar_t},
+  % C Library - <stdint.h>
+  morekeywords=[2]{int8_t,int16_t,int32_t,int64_t,int_fast8_t,int_fast16_t,int_fast32_t,int_fast64_t,int_least8_t,int_least16_t,int_least32_t,int_least64_t,intmax_t,intptr_t,uint8_t,uint16_t,uint32_t,uint64_t,uint_fast8_t,uint_fast16_t,uint_fast32_t,uint_fast64_t,uint_least8_t,uint_least16_t,uint_least32_t,uint_least64_t,uintmax_t},
+  % C Library - <stdio.h>
+  morekeywords=[2]{FILE,fpos_t},
+  % C Library - <stdlib.h>
+  morekeywords=[2]{size_t,wchar_t,div_t,ldiv_t},
+  % C Library - <string.h>
+  morekeywords=[2]{size_t},
+  % C Library - <time.h>
+  morekeywords=[2]{size_t,clock_t,time_t},
+  %=======================================================================================================
+  %=================================================== Macros ============================================
+  %=======================================================================================================
+  % Standard Predefined Macros
+  morekeywords=[3]{__FILE__,__LINE__,__func__,__FUNCTION__,__DATE__,__TIME__,__STDC__,__STDC_VERSION__,__STDC_HOSTED__,__cplusplus,__OBJC__,__ASSEMBLER__,__VA_ARGS__},
+  % Common Predefined Macros
+  morekeywords=[3]{__COUNTER__,__GFORTRAN__,__GNUC__,__GNUC_MINOR__,__GNUC_PATCHLEVEL__,__GNUG__,__STRICT_ANSI__,__BASE_FILE__,__INCLUDE_LEVEL__,__ELF__,__VERSION__,__OPTIMIZE__,__OPTIMIZE_SIZE__,__NO_INLINE__,__GNUC_GNU_INLINE__,__GNUC_STDC_INLINE__,__CHAR_UNSIGNED__,__WCHAR_UNSIGNED__,__REGISTER_PREFIX__,__USER_LABEL_PREFIX__,__SIZE_TYPE__,__PTRDIFF_TYPE__,__WCHAR_TYPE__,__WINT_TYPE__,__INTMAX_TYPE__,__UINTMAX_TYPE__,__SIG_ATOMIC_TYPE__,__INT8_TYPE__,__INT16_TYPE__,__INT32_TYPE__,__INT64_TYPE__,__UINT8_TYPE__,__UINT16_TYPE__,__UINT32_TYPE__,__UINT64_TYPE__,__INT_LEAST8_TYPE__,__INT_LEAST16_TYPE__,__INT_LEAST32_TYPE__,__INT_LEAST64_TYPE__,__UINT_LEAST8_TYPE__,__UINT_LEAST16_TYPE__,__UINT_LEAST32_TYPE__,__UINT_LEAST64_TYPE__,__INT_FAST8_TYPE__,__INT_FAST16_TYPE__,__INT_FAST32_TYPE__,__INT_FAST64_TYPE__,__UINT_FAST8_TYPE__,__UINT_FAST16_TYPE__,__UINT_FAST32_TYPE__,__UINT_FAST64_TYPE__,__INTPTR_TYPE__,__UINTPTR_TYPE__,__CHAR_BIT__,__SCHAR_MAX__,__WCHAR_MAX__,__SHRT_MAX__,__INT_MAX__,__LONG_MAX__,__LONG_LONG_MAX__,__WINT_MAX__,__SIZE_MAX__,__PTRDIFF_MAX__,__INTMAX_MAX__,__UINTMAX_MAX__,__SIG_ATOMIC_MAX__,__INT8_MAX__,__INT16_MAX__,__INT32_MAX__,__INT64_MAX__,__UINT8_MAX__,__UINT16_MAX__,__UINT32_MAX__,__UINT64_MAX__,__INT_LEAST8_MAX__,__INT_LEAST16_MAX__,__INT_LEAST32_MAX__,__INT_LEAST64_MAX__,__UINT_LEAST8_MAX__,__UINT_LEAST16_MAX__,__UINT_LEAST32_MAX__,__UINT_LEAST64_MAX__,__INT_FAST8_MAX__,__INT_FAST16_MAX__,__INT_FAST32_MAX__,__INT_FAST64_MAX__,__UINT_FAST8_MAX__,__UINT_FAST16_MAX__,__UINT_FAST32_MAX__,__UINT_FAST64_MAX__,__INTPTR_MAX__,__UINTPTR_MAX__,__WCHAR_MIN__,__WINT_MIN__,__SIG_ATOMIC_MIN__,__INT8_C,__INT16_C,__INT32_C,__INT64_C,__UINT8_C,__UINT16_C,__UINT32_C,__UINT64_C,__INTMAX_C,__UINTMAX_C,__SCHAR_WIDTH__,__SHRT_WIDTH__,__INT_WIDTH__,__LONG_WIDTH__,__LONG_LONG_WIDTH__,__PTRDIFF_WIDTH__,__SIG_ATOMIC_WIDTH__,__SIZE_WIDTH__,__WCHAR_WIDTH__,__WINT_WIDTH__,__INT_LEAST8_WIDTH__,__INT_LEAST16_WIDTH__,__INT_LEAST32_WIDTH__,__INT_LEAST64_WIDTH__,__INT_FAST8_WIDTH__,__INT_FAST16_WIDTH__,__INT_FAST32_WIDTH__,__INT_FAST64_WIDTH__,__INTPTR_WIDTH__,__INTMAX_WIDTH__,__SIZEOF_INT__,__SIZEOF_LONG__,__SIZEOF_LONG_LONG__,__SIZEOF_SHORT__,__SIZEOF_POINTER__,__SIZEOF_FLOAT__,__SIZEOF_DOUBLE__,__SIZEOF_LONG_DOUBLE__,__SIZEOF_SIZE_T__,__SIZEOF_WCHAR_T__,__SIZEOF_WINT_T__,__SIZEOF_PTRDIFF_T__,__BYTE_ORDER__,__ORDER_LITTLE_ENDIAN__,__ORDER_BIG_ENDIAN__,__ORDER_PDP_ENDIAN__,__FLOAT_WORD_ORDER__,__DEPRECATED,__EXCEPTIONS,__GXX_RTTI,__USING_SJLJ_EXCEPTIONS__,__GXX_EXPERIMENTAL_CXX0X__,__GXX_WEAK__,__NEXT_RUNTIME__,__LP64__,__SSP__,__SSP_ALL__,__SSP_STRONG__,__SSP_EXPLICIT__,__SANITIZE_ADDRESS__,__SANITIZE_THREAD__,__TIMESTAMP__,__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1,__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2,__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4,__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8,__GCC_HAVE_SYNC_COMPARE_AND_SWAP_16,__GCC_HAVE_DWARF2_CFI_ASM,__FP_FAST_FMA,__FP_FAST_FMAF,__FP_FAST_FMAL,__GCC_IEC_559,__GCC_IEC_559_COMPLEX,__NO_MATH_ERRNO__},
+  % C Library - <complex.h>
+  morekeywords=[3]{_Imaginary_I,_Complex_I,I},
+  % C Library - <fenv.h>
+  morekeywords=[3]{FE_DIVBYZERO,FE_INEXACT,FE_INVALID,FE_OVERFLOW,FE_UNDERFLOW,FE_ALL_EXCEPT,FE_DOWNWARD,FE_TONEAREST,FE_TOWARDZERO,FE_UPWARD},
+  % C Library - <float.h>
+  morekeywords=[3]{FLT_RADIX,DECIMAL_DIG,FLT_DECIMAL_DIG,DBL_DECIMAL_DIG,LDBL_DECIMAL_DIG,FLT_MIN,DBL_MIN,LDBL_MIN,FLT_TRUE_MIN,DBL_TRUE_MIN,LDBL_TRUE_MIN,FLT_MAX,DBL_MAX,LDBL_MAX,FLT_EPSILON,DBL_EPSILON,LDBL_EPSILON,FLT_DIG,DBL_DIG,LDBL_DIG,FLT_MANT_DIG,DBL_MANT_DIG,LDBL_MANT_DIG,FLT_MIN_EXP,DBL_MIN_EXP,LDBL_MIN_EXP,FLT_MIN_10_EXP,DBL_MIN_10_EXP,LDBL_MIN_10_EXP,FLT_MAX_EXP,DBL_MAX_EXP,LDBL_MAX_EXP,FLT_MAX_10_EXP,DBL_MAX_10_EXP,LDBL_MAX_10_EXP,FLT_ROUNDS,FLT_EVAL_METHOD,FLT_HAS_SUBNORM,DBL_HAS_SUBNORM,LDBL_HAS_SUBNORM},
+  % C Library - <iso646.h>
+  morekeywords=[3]{and,and_eq,bitand,bitor,compl,not,not_eq,or,or_eq,xor,xor_eq},
+  % C Library - <limits.h>
+  morekeywords=[3]{CHAR_BIT,MB_LEN_MAX,CHAR_MIN,CHAR_MAX,SCHAR_MIN,SHRT_MIN,INT_MIN,LONG_MIN,LLONG_MIN,SCHAR_MAX,SHRT_MAX,INT_MAX,LONG_MAX,LLONG_MAX,UCHAR_MAX,USHRT_MAX,UINT_MAX,ULONG_MAX,ULLONG_MAX,__STDC_UTF_16__,__STDC_UTF_32__},
+  % C Library - <locale.h>
+  morekeywords=[3]{LC_ALL,LC_COLLATE,LC_CTYPE,LC_MONETARY,LC_NUMERIC,LC_TIME},
+  % C Library - <math.h>
+  morekeywords=[3]{HUGE_VALF,HUGE_VAL,HUGE_VALL,INFINITY,NAN,FP_FAST_FMAF,FP_FAST_FMA,FP_FAST_FMAL,FP_ILOGB0,FP_ILOGBNAN,math_errhandling,MATH_ERRNO,MATH_ERREXCEPT,FP_NORMAL,FP_SUBNORMAL,FP_ZERO,FP_INFINITE,FP_NAN},
+  % C Library - <signal.h>
+  morekeywords=[3]{SIG_DFL,SIG_ERR,SIG_IGN,SIGABRT,SIGFPE,SIGILL,SIGINT,SIGSEGV,SIGTERM},
+  % C Library - <stdalign.h>
+  morekeywords=[3]{__alignas_is_defined,__alignof_is_defined},
+  % C Library - <stdatomic.h>
+  morekeywords=[3]{ATOMIC_BOOL_LOCK_FREE,ATOMIC_CHAR_LOCK_FREE,ATOMIC_CHAR16_T_LOCK_FREE,ATOMIC_CHAR32_T_LOCK_FREE,ATOMIC_WCHAR_T_LOCK_FREE,ATOMIC_SHORT_LOCK_FREE,ATOMIC_INT_LOCK_FREE,ATOMIC_LONG_LOCK_FREE,ATOMIC_LLONG_LOCK_FREE,ATOMIC_POINTER_LOCK_FREE,ATOMIC_FLAG_INIT},
+  % C Library - <stdbool.h>
+  morekeywords=[3]{true,false,__bool_true_false_are_defined},
+  % C Library - <stddef.h>
+  morekeywords=[3]{NULL},
+  % C Library - <stdint.h>
+  morekeywords=[3]{INT8_MIN,INT16_MIN,INT32_MIN,INT64_MIN,INT_FAST8_MIN,INT_FAST16_MIN,INT_FAST32_MIN,INT_FAST64_MIN,INT_LEAST8_MIN,INT_LEAST16_MIN,INT_LEAST32_MIN,INT_LEAST64_MIN,INTPTR_MIN,INTMAX_MIN,INT8_MAX,INT16_MAX,INT32_MAX,INT64_MAX,INT_FAST8_MAX,INT_FAST16_MAX,INT_FAST32_MAX,INT_FAST64_MAX,INT_LEAST8_MAX,INT_LEAST16_MAX,INT_LEAST32_MAX,INT_LEAST64_MAX,INTPTR_MAX,INTMAX_MAX,UINT8_MAX,UINT16_MAX,UINT32_MAX,UINT64_MAX,UINT_FAST8_MAX,UINT_FAST16_MAX,UINT_FAST32_MAX,UINT_FAST64_MAX,UINT_LEAST8_MAX,UINT_LEAST16_MAX,UINT_LEAST32_MAX,UINT_LEAST64_MAX,UINTPTR_MAX,UINTMAX_MAX},
+  % C Library - <stdio.h>
+  morekeywords=[3]{NULL,_IOFBF,_IOLBF,_IONBF,BUFSIZ,EOF,FOPEN_MAX,FILENAME_MAX,L_tmpnam,L_tmpnam_s,SEEK_CUR,SEEK_END,SEEK_SET,TMP_MAX,TMP_MAX_S,stderr,stdin,stdout},
+  % C Library - <stdlib.h>
+  morekeywords=[3]{NULL,EXIT_FAILURE,EXIT_SUCCESS,RAND_MAX,MB_CUR_MAX},
+  % C Library - <stdnoreturn.h>
+  morekeywords=[3]{noreturn},
+  % C Library - <string.h>
+  morekeywords=[3]{NULL},
+  % C Library - <threads.h>
+  morekeywords=[3]{thread_local,TSS_DTOR_ITERATIONS},
+  % C Library - <time.h>
+  morekeywords=[3]{NULL,CLOCKS_PER_SEC},
+  % C Library - <wchar.h>
+  morekeywords=[3]{WEOF,WCHAR_MIN,WCHAR_MAX},
+}[keywords,comments,strings]
+
+\endinput
