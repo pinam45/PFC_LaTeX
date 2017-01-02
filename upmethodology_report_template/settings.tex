@@ -1,0 +1,105 @@
+% For more information about UPmethodology: https://www.ctan.org/pkg/upmethodology
+
+%=======================================================================================================
+%=============================================== Informations ==========================================
+%=======================================================================================================
+
+%%% Document Information and Declaration
+\declaredocument{<project>}{<name>}{<ref>}
+%\declaredocumentex{<project>}{<subproject>}{<name>}{<ref>}
+
+%%% Abstract and Key-words
+\setdocabstract[english]{<abstract\_text>}
+%\setdocabstract[french]{<abstract_text>}
+\setdockeywords[english]{<keywords>}
+%\setdockeywords[french]{<keywords>}
+
+%%% Document Authors
+%\addauthor[<email>]{<firstname>}{<name>}
+\addauthor*[<email>]{<firstname>}{<name>}{<comment>}
+
+%%% Document Validators
+%\addvalidator[<email>]{<firstname>}{<name>}
+\addvalidator*[<email>]{<firstname>}{<name>}{<comment>}
+
+%%% Document Authors and Validators
+%\addauthorvalidator[<email>]{<firstname>}{<name>}
+\addauthorvalidator*[<email>]{<firstname>}{<name>}{<comment>}
+
+%%% Informed People
+%\addinformed[<email>]{<firstname>}{<name>}
+\addinformed*[<email>]{<firstname>}{<name>}{<comment>}
+
+%%% Copyright and Publication Information
+\setcopyrighter{<copyrighter\_name>}
+\setpublisher{<publisher\_name>}
+\setprintingaddress{<printing\_address>}
+%\setisbn{isbn\_number}
+%\setissn{issn\_number}
+%\setdoi{doi\_number}
+
+%%% Version
+\incversion{\makedate{\the\day}{\the\month}{\the\year}}{Initial version.}{\upmpublic}
+%\incversion{\today{}}{Initial version.}{\upmpublic}
+
+%=======================================================================================================
+%================================================== Configs ============================================
+%=======================================================================================================
+
+% Change Front Page Layout
+%\setfrontcover{modern} % modern or classic
+
+% Change Illustration Picture
+%\setfrontillustration[1.3]{figures/figure}
+
+% Source code formatting
+%\upmcodelang{cpp} % uml, java or cpp
+
+% Prevent page breaks in paragraphs
+\predisplaypenalty=1000
+\postdisplaypenalty=1000
+\clubpenalty=1000
+
+% Minimal space required in the bottom margin not to move the title on the next page
+%\renewcommand{\bottomtitlespace}{.1\textheight}
+
+% Links config, especialy for the table of contents
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    linktoc=all
+}
+
+% French language config
+%\frenchbsetup{StandardLayout=true,ReduceListSpacing=false,CompactItemize=false}
+
+%=======================================================================================================
+%================================================= Functions ===========================================
+%=======================================================================================================
+
+%Paragraph with line break
+\newcommand{\p}[1]{\paragraph{#1\\}}
+
+% Function to print a warning sign
+\newcommand{\dangersign}[1][2.5ex]
+	{\renewcommand{\stacktype}{L}
+		{\scaleto{\stackon[1pt]{\color{red}$\triangle$}{\fontsize{4pt}{4pt}\selectfont !}}{#1}}}
+
+% Definition of some dt/dx/dy shortcuts for integrals
+\newcommand{\dt}
+{\;\mathrm{d}\,t}
+
+\newcommand{\dx}
+{\;\mathrm{d}\,x}
+
+\newcommand{\dy}
+{\;\mathrm{d}\,y}
+
+% Definition of \Witem for 'itemize' environment with a warning sign
+\newcommand{\Witem}
+{\item[\dangersign{}]}
+
+% Definition of a Max function shortcut
+\newcommand{\Max}[2][ ]
+{\underset{#1}{\text{Max}}\,#2}
