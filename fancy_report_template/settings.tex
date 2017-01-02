@@ -1,0 +1,79 @@
+%=======================================================================================================
+%=============================================== Informations ==========================================
+%=======================================================================================================
+
+% Cover infos
+\title{<title>}
+\author{<name>}
+\date{\today{}}
+
+% Fancy style options
+\lhead{\small <left head>}
+\rhead{\small <right head>}
+\lfoot{<lfoot>}
+\rfoot{<rfoot>}
+\cfoot{\thepage}
+\pagestyle{fancy}
+
+% Redefine the fancy plain page style
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\lhead{\small <left head>}
+	\rhead{\small <right head>}
+	\lfoot{<lfoot>}
+	\rfoot{<rfoot>}
+	\cfoot{\thepage}
+}
+
+%=======================================================================================================
+%================================================== Configs ============================================
+%=======================================================================================================
+
+% Prevent page breaks in paragraphs
+\predisplaypenalty=1000
+\postdisplaypenalty=1000
+\clubpenalty=1000
+
+% Minimal space required in the bottom margin not to move the title on the next page
+\renewcommand{\bottomtitlespace}{.1\textheight}
+
+% Links config, especialy for the table of contents
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    linktoc=all
+}
+
+% French language config
+\frenchbsetup{StandardLayout=true,ReduceListSpacing=false,CompactItemize=false}
+
+%=======================================================================================================
+%================================================= Functions ===========================================
+%=======================================================================================================
+
+%Paragraph with line break
+\newcommand{\p}[1]{\paragraph{#1\\}}
+
+% Function to print a warning sign
+\newcommand{\dangersign}[1][2.5ex]
+	{\renewcommand{\stacktype}{L}
+		{\scaleto{\stackon[1pt]{\color{red}$\triangle$}{\fontsize{4pt}{4pt}\selectfont !}}{#1}}}
+
+% Definition of some dt/dx/dy shortcuts for integrals
+\newcommand{\dt}
+{\;\mathrm{d}\,t}
+
+\newcommand{\dx}
+{\;\mathrm{d}\,x}
+
+\newcommand{\dy}
+{\;\mathrm{d}\,y}
+
+% Definition of \Witem for 'itemize' environment with a warning sign
+\newcommand{\Witem}
+{\item[\dangersign{}]}
+
+% Definition of a Max function shortcut
+\newcommand{\Max}[2][ ]
+{\underset{#1}{\text{Max}}\,#2}
