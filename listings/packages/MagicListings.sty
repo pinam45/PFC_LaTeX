@@ -33,7 +33,7 @@
   %commentstyle=\itshape,                            % Comments style.
   %stringstyle={},                                   % Strings style.
   %keywordstyle=[<number>][*]\textbf,                % Keywords style. The optional <number> argument is the class number to which the style should be applied. If you use the optional star after the (optional) class number, the keywords are printed uppercase.
-  %classoffset=0,                                    % Is added to all class numbers before the styles, keywords, identifers, etc. are assigned.
+  %classoffset=0,                                    % Is added to all class numbers before the styles, keywords, identifiers, etc. are assigned.
   %emph=[<number>]{<identifier list>},               % Define the <identifier list> from `emphasize class <number>'.
   %moreemph=[<number>]{<identifier list>},           % Add the <identifier list> from `emphasize class <number>'.
   %deleteemph=[<number>]{<identifier list>},         % Remove the <identifier list> from `emphasize class <number>'.
@@ -87,10 +87,10 @@
   %framexrightmargin=0pt,                            % Dimension which are used additionally to framesep to make up the margin of a frame.
   %framextopmargin=0pt,                              % Dimension which are used additionally to framesep to make up the margin of a frame.
   %framexbottommargin=0pt,                           % Dimension which are used additionally to framesep to make up the margin of a frame.
-  %backgroundcolor=<color command>,                  % Specify the colour of the background.
-  %rulecolor=<color command>,                        % Specify the colour of the rules.
-  %fillcolor=<color command>,                        % Specify the colour of the space between `text box'and first rule.
-  %rulesepcolor=<color command>,                     % Specify the colour of the space between two rules.
+  %backgroundcolor=<color command>,                  % Specify the color of the background.
+  %rulecolor=<color command>,                        % Specify the color of the rules.
+  %fillcolor=<color command>,                        % Specify the color of the space between `text box'and first rule.
+  %rulesepcolor=<color command>,                     % Specify the color of the space between two rules.
   %=======================================================================================================
   %=================================================== Column alignment ==================================
   %=======================================================================================================
@@ -102,7 +102,7 @@
   %=================================================== Escaping to LATEX =================================
   %=======================================================================================================
   %texcl=false,                                      % Activates or deactivates LATEX comment lines. If activated, comment line delimiters are printed as usual, but the comment line text is read as LATEX code and typeset in comment style.
-  %mathescape=true,                                  % Activates or deactivates special behaviour of the dollar sign. If activated a dollar sign acts as TEX's text math shift.
+  %mathescape=true,                                  % Activates or deactivates special behavior of the dollar sign. If activated a dollar sign acts as TEX's text math shift.
   %escapeinside=<character><character>,              % Is a generalization of escapechar. If the value is not empty, the package escapes to LATEX between the first and second character.
   %escapebegin=<tokens>,                             % The tokens are executed at the beginning of each escape, in particular for texcl.
   %escapeend=<tokens>,                               % The tokens are executed at the end of each escape, in particular for texcl.
@@ -207,6 +207,7 @@
 \DeclareCaptionFont{whitebf}{\color{white}\bfseries}
 \DeclareCaptionFormat{algo}{\colorbox{gray}{\parbox[b][1,5em][c]{\textwidth}{\color{white}\textbf{Algorithm: }#3}}}
 
+ %Require the algo language definition (available in the package file AlgorithmDefinition.sty)
 \newcommand{\lstinputalgo}[2][]{%
   \captionsetup[lstlisting]{labelsep=colon,format=algo,labelfont=whitebf,textfont=white}
   \lstinputlisting[language=algo, style=algo_style, #1]{#2}
@@ -215,6 +216,7 @@
 
 \DeclareCaptionFormat{fancyalgo}{\rule{\dimexpr\textwidth+17pt\relax}{0.4pt}\par\vskip1pt\textbf{Algorithm: }#3}
 
+ %Require the algo language definition (available in the package file AlgorithmDefinition.sty)
 \newcommand{\lstinputfancyalgo}[2][]{%
   \captionsetup[lstlisting]{format=fancyalgo,singlelinecheck=false, margin=0pt, font={sf},labelsep=colon,labelfont=bf}
   \lstinputlisting[language=algo, style=fancyalgo_style, #1]{#2}
