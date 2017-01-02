@@ -1,0 +1,81 @@
+\documentclass[12pt,a4paper,twoside]{article}
+
+%%% Standard packages %%%
+\usepackage[top=2cm, bottom=1.8cm, left=1.8cm, right=1.8cm, head=14pt, foot=36pt]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{xcolor}
+
+%%% Personnal packages %%%
+\usepackage{packages/MagicListings}
+\usepackage{packages/ARMAssemblerDefinition}
+\usepackage{packages/AlgorithmDefinition}
+\usepackage{packages/CUDADefinition}
+\usepackage{packages/ExtendedBASHDefinition}
+\usepackage{packages/StandardLibraryCDefinition}
+\usepackage{packages/StandardLibraryCppDefinition}
+
+%%% Configs %%%
+
+% Links config, especialy for the table of contents
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    linktoc=all
+}
+
+% Cover infos
+\title{Listings examples}
+\author{PINARD Maxime}
+\date{\today{}}
+
+% Fancy style options
+\lhead{\small Listings examples}
+\rhead{\small PINARD Maxime}
+\lfoot{}
+\rfoot{}
+\cfoot{\thepage}
+\pagestyle{fancy}
+
+%%% Exemple of personnal package use %%%
+\begin{document}
+
+	\maketitle{}
+	\tableofcontents{}
+	\lstlistoflistings{}
+
+	\newpage{}
+	\section{Code citation examples}
+
+		\subsection{Magic style example with LaTeX}
+			\lstinputlisting[language={[LaTeX]Tex}, style=magic_style, caption=Listings examples file]{listings_example.tex}
+
+		\subsection{Standard Library C example}
+			\lstinputlisting[language={[StandardLibrary]C}, style=magic_style, caption=fopen usage example]{exemple_code_files/fopen_example.c}
+
+		\subsection{ARM Assembler example}
+			\lstinputlisting[language={[ARM]Assembler}, style=magic_style, caption=itob function]{exemple_code_files/itob.S}
+
+		\subsection{Extended BASH example}
+			\lstinputlisting[language={[Extended]BASH}, style=magic_style, caption=Slow prime number tester]{exemple_code_files/prime_test.sh}
+
+		\subsection{CUDA example}
+			\lstinputlisting[language=CUDA, style=magic_style, caption=utility functions]{exemple_code_files/utils.cu}
+
+	\newpage{}
+	\section{Algorithm citation examples}
+
+		\subsection{Algorithm Normal style example}
+			\lstinputalgo[caption=gcd with subtraction based method]{exemple_code_files/subtraction_based_gcd.algo}
+
+		\subsection{Algorithm Fancy style example}
+			\lstinputfancyalgo[caption=gcd with division based method]{exemple_code_files/division_based_gcd.algo}
+
+\end{document}
