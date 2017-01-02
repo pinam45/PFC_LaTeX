@@ -1,0 +1,24 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{UPCDefinition}
+  [02/01/2017 V1.0, listings language file for UPC]
+
+\RequirePackage{listings}
+
+\lstalias{upc}{UPC}
+\lstalias{Upc}{UPC}
+\lstdefinelanguage{UPC}{
+  language=C,
+  %=======================================================================================================
+  %=========================================== Language Extensions =======================================
+  %=======================================================================================================
+  % Expressions
+  morekeywords=[2]{upc_barrier,upc_localsizeof,relaxed,upc_blocksizeof,shared,upc_elemsizeof,upc_notify,strict,upc_fence,upc_wait,upc_forall},
+  % Predefined identifiers
+  morekeywords=[3]{THREADS,MYTHREAD,UPC_MAX_BLOCK_SIZE},
+}[keywords,comments,strings]
+
+\endinput
+
+% Language Extentions can be completed
+% See: http://upc.lbl.gov/docs/
