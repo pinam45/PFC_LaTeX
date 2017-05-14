@@ -204,22 +204,25 @@
   belowcaptionskip=7pt,
 }
 
-% a way to color digits can be found here: http://tex.stackexchange.com/a/40546
+% A way to color digits can be found here: http://tex.stackexchange.com/a/40546
+
+\newcommand{\lstalgoname}{Algorithm}
+\newcommand{\lstalgosep}{: }
 
 \DeclareCaptionFont{white}{\color{white}}
 \DeclareCaptionFont{whitebf}{\color{white}\bfseries}
-\DeclareCaptionFormat{algo}{\colorbox{gray}{\parbox[b][1,5em][c]{\textwidth}{\color{white}\textbf{Algorithm: }#3}}}
+\DeclareCaptionFormat{algo}{\colorbox{gray}{\parbox[b][1,5em][c]{\textwidth}{\color{white}\textbf{\lstalgoname{}\lstalgosep{}}#3}}}
 
- %Require the algo language definition (available in the package file AlgorithmDefinition.sty)
+% Require the algo language definition (available in the package file AlgorithmDefinition.sty)
 \newcommand{\lstinputalgo}[2][]{%
   \captionsetup[lstlisting]{labelsep=colon,format=algo,labelfont=whitebf,textfont=white}
   \lstinputlisting[language=algo, style=algo_style, #1]{#2}
   \clearcaptionsetup{lstlisting}
 }
 
-\DeclareCaptionFormat{fancyalgo}{\rule{\dimexpr\textwidth+17pt\relax}{0.4pt}\par\vskip1pt\textbf{Algorithm: }#3}
+\DeclareCaptionFormat{fancyalgo}{\rule{\dimexpr\textwidth+17pt\relax}{0.4pt}\par\vskip1pt\textbf{\lstalgoname{}\lstalgosep{}}#3}
 
- %Require the algo language definition (available in the package file AlgorithmDefinition.sty)
+% Require the algo language definition (available in the package file AlgorithmDefinition.sty)
 \newcommand{\lstinputfancyalgo}[2][]{%
   \captionsetup[lstlisting]{format=fancyalgo,singlelinecheck=false, margin=0pt, font={sf},labelsep=colon,labelfont=bf}
   \lstinputlisting[language=algo, style=fancyalgo_style, #1]{#2}
