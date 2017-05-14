@@ -18,6 +18,7 @@
 *.fot
 *.cb
 *.cb2
+*.sta
 
 ## Intermediate documents:
 *.dvi
